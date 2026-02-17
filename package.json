@@ -1,0 +1,79 @@
+{
+  "name": "sanity-social-media-studio",
+  "version": "1.0.0",
+  "description": "A comprehensive Social Media Studio plugin for Sanity CMS — create graphics, schedule posts, manage templates, import CSV, batch images, and more.",
+  "keywords": [
+    "sanity",
+    "sanity-plugin",
+    "social-media",
+    "instagram",
+    "facebook",
+    "threads",
+    "twitter",
+    "graphics",
+    "scheduling",
+    "content-management"
+  ],
+  "homepage": "https://github.com/netz-sg/sanity-social-media-studio#readme",
+  "bugs": {
+    "url": "https://github.com/netz-sg/sanity-social-media-studio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netz-sg/sanity-social-media-studio.git"
+  },
+  "license": "MIT",
+  "author": "netz-sg",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts"
+    },
+    "./schemas": {
+      "import": "./src/schemas/index.ts"
+    },
+    "./actions": {
+      "import": "./src/actions/index.ts"
+    },
+    "./api/*": {
+      "import": "./src/api/*"
+    },
+    "./lib": {
+      "import": "./src/lib/index.ts"
+    }
+  },
+  "main": "./src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "lint": "eslint src/",
+    "format": "prettier --write src/"
+  },
+  "peerDependencies": {
+    "@sanity/icons": "^3.0.0",
+    "@sanity/ui": "^2.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "sanity": "^3.0.0 || ^4.0.0"
+  },
+  "devDependencies": {
+    "@sanity/icons": "^3.0.0",
+    "@sanity/ui": "^2.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "react": "^19.0.0",
+    "sanity": "^4.12.0",
+    "typescript": "^5.5.0"
+  },
+  "optionalDependencies": {
+    "@napi-rs/canvas": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "sanityPlugin": {
+    "verifyPackage": {
+      "dependencies": false
+    }
+  }
+}
