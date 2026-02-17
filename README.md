@@ -5,6 +5,20 @@ A comprehensive social media management plugin for [Sanity Studio](https://www.s
 ![Sanity v3+](https://img.shields.io/badge/Sanity-v3+-blue)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 
+> **⚠️ Note:** The installation as a standalone plugin has **not been tested yet**. This tool was originally built directly inside a Sanity Studio project and has been extracted into this separate repository. If you encounter any issues during setup, please open an issue.
+
+---
+
+## Screenshots
+
+| Social Media Graphics | Post Creation |
+|:---:|:---:|
+| ![Social Media Graphics](Socialmedia-Graphics.png) | ![Post Creation](post_creation.png) |
+
+| Post Calendar | Drafts & Templates |
+|:---:|:---:|
+| ![Post Calendar](post_calender.png) | ![Drafts & Templates](drafts_templates.png) |
+
 ---
 
 ## Features
