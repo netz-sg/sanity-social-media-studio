@@ -1,81 +1,121 @@
-# Sanity Social Media Studio
+<div align="center">
 
-A comprehensive social media management plugin for [Sanity Studio](https://www.sanity.io/). Create graphics, schedule posts across multiple platforms, manage templates, import from CSV, and more — all from within your Sanity Studio.
+# 🎨 Sanity Social Media Studio
 
-![Sanity v3+](https://img.shields.io/badge/Sanity-v3+-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-green)
+**The all-in-one social media toolkit for Sanity Studio.**
 
-> **⚠️ Note:** The installation as a standalone plugin has **not been tested yet**. This tool was originally built directly inside a Sanity Studio project and has been extracted into this separate repository. If you encounter any issues during setup, please open an issue.
+Create stunning graphics, schedule posts, manage templates, and more — without ever leaving your CMS.
+
+[![Sanity v3+](https://img.shields.io/badge/Sanity-v3%2B-F36458?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48cmVjdCB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIGZpbGw9IiNGMzY0NTgiIHJ4PSI0Ii8+PC9zdmc+&logoColor=white)](https://www.sanity.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge)](LICENSE)
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5%2B-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+
+</div>
+
+> [!WARNING]
+> **Early Release:** The installation as a standalone npm plugin has **not been tested yet**. This tool was originally built directly inside a Sanity Studio project and has been extracted into this repository. If you run into issues, please [open an issue](https://github.com/netz-sg/sanity-social-media-studio/issues).
 
 ---
 
-## Screenshots
+## 👀 Preview
 
-### 🎨 Social Media Graphics
+<details>
+<summary><strong>🎨 Social Media Graphics</strong> — Design branded visuals with 5 built-in styles</summary>
+<br>
+
 ![Social Media Graphics](Socialmedia-Graphics.png)
 
-### ✏️ Post Creation
+</details>
+
+<details>
+<summary><strong>✏️ Post Creation</strong> — Compose & schedule posts for Instagram, Facebook, Threads & X</summary>
+<br>
+
 ![Post Creation](post_creation.png)
 
-### 📅 Post Calendar
+</details>
+
+<details>
+<summary><strong>📅 Post Calendar</strong> — Monthly overview of all scheduled & published posts</summary>
+<br>
+
 ![Post Calendar](post_calender.png)
 
-### 📝 Drafts & Templates
+</details>
+
+<details>
+<summary><strong>📝 Drafts & Templates</strong> — Save drafts and reuse templates with dynamic placeholders</summary>
+<br>
+
 ![Drafts & Templates](drafts_templates.png)
 
+</details>
+
 ---
 
-## Features
+## ✨ Features
+
+<table>
+<tr>
+<td width="50%" valign="top">
 
 ### 🎨 Graphics Studio
-- **5 built-in styles**: Industrial, Minimal, Gradient, Bold, Neon
-- **Multiple formats**: Instagram Story (1080×1920), Feed Square (1080×1080), Feed Portrait (1080×1440), Facebook, Twitter/X
-- **Live preview** with real-time editing
-- **Custom watermark & logo** support
-- **Content selection** from Sanity documents (posts, concerts, etc.)
-- **Server-side rendering** with `@napi-rs/canvas`
+- 5 built-in styles — Industrial, Minimal, Gradient, Bold, Neon
+- Multiple formats — Story, Square, Portrait, Facebook, X
+- Live preview with real-time editing
+- Custom watermark & logo support
+- Content selection from Sanity documents
+- Server-side rendering via `@napi-rs/canvas`
 
 ### 📱 Social Media Posting
-- **Multi-platform posting**: Instagram, Facebook, Threads, X (Twitter)
-- **Schedule posts** with timezone support
-- **Attach images/media** to posts
-- **Draft & template system** for reusable content
-- **Character count** per platform
+- Multi-platform — Instagram, Facebook, Threads, X
+- Schedule posts with timezone support
+- Attach images & media
+- Draft & template system
+- Per-platform character count
 
 ### 📅 Post Calendar
-- **Monthly calendar view** of scheduled posts
-- **Visual status indicators** (scheduled, published, failed)
-- **Quick actions** from calendar entries
+- Monthly calendar view
+- Visual status indicators (scheduled / published / failed)
+- Quick actions from calendar entries
+
+</td>
+<td width="50%" valign="top">
 
 ### 📋 CSV Import
-- **Bulk import** social media posts from CSV
-- **Template mapping** with placeholders
-- **Preview before import**
+- Bulk import posts from CSV files
+- Template mapping with placeholders
+- Preview before import
 
 ### 🖼️ Batch Images
-- **Bulk image generation** for multiple posts
-- **Consistent branding** across all generated images
+- Bulk image generation for multiple posts
+- Consistent branding across all graphics
 
 ### 📝 Drafts & Templates
-- **Save post drafts** for later
-- **Reusable templates** with placeholders: `{title}`, `{date}`, `{location}`, `{band}`, `{url}`, `{venue}`, `{price}`
-- **Template categories**: Concert, News, Giveaway, Tour, Aftershow, Release, Video, General
+- Save post drafts for later
+- Reusable templates with dynamic placeholders
+- 8 categories — Concert, News, Giveaway, Tour, Aftershow, Release, Video, General
 
 ### ⚡ Document Actions
-- **One-click graphics generation** from concert, news, and aftershow story documents
-- Opens Story + Feed format in new tabs
+- One-click graphics from concert, news & aftershow documents
+- Automatically opens Story + Feed format
+
+</td>
+</tr>
+</table>
 
 ---
 
-## Installation
+## 🚀 Quick Start
+
+### 1. Install
 
 ```bash
 npm install sanity-social-media-studio
 ```
 
-## Setup
-
-### 1. Add the plugin to your Sanity config
+### 2. Add the plugin
 
 ```ts
 // sanity.config.ts
@@ -83,18 +123,16 @@ import { defineConfig } from 'sanity'
 import { socialMediaStudioTool } from 'sanity-social-media-studio'
 
 export default defineConfig({
-  // ...your config
+  // ...
   plugins: [
     socialMediaStudioTool(),
-    // ...other plugins
   ],
 })
 ```
 
-### 2. Register the schemas
+### 3. Register schemas
 
 ```ts
-// sanity.config.ts (or your schema index)
 import {
   socialMediaTemplateType,
   lateApiSettingsType,
@@ -104,7 +142,6 @@ export default defineConfig({
   // ...
   schema: {
     types: [
-      // ...your types
       socialMediaTemplateType,
       lateApiSettingsType,
     ],
@@ -112,10 +149,9 @@ export default defineConfig({
 })
 ```
 
-### 3. Add document actions (optional)
+### 4. Add document actions *(optional)*
 
 ```ts
-// sanity.config.ts
 import {
   generateSocialGraphicsAction,
   generateNewsSocialGraphicsAction,
@@ -141,11 +177,14 @@ export default defineConfig({
 })
 ```
 
-### 4. Set up API routes (Next.js)
+---
 
-The plugin expects the following API endpoints on your Next.js frontend for full functionality:
+## 🔌 API Routes (Next.js)
 
-#### Social Graphics Generation
+The plugin requires backend API routes for graphics rendering and social media posting.
+
+<details>
+<summary><strong>Social Graphics Endpoint</strong></summary>
 
 ```ts
 // app/api/social-graphics/route.ts
@@ -161,15 +200,21 @@ export async function POST(req: NextRequest) {
 }
 ```
 
-#### Late API Proxy (Social Media Posting)
+</details>
 
-The posting feature uses [Late](https://getlate.dev) as the social media scheduling backend. You need a proxy API route:
+<details>
+<summary><strong>Late API Proxy (Social Media Scheduling)</strong></summary>
+
+The posting feature uses [Late](https://getlate.dev) as the scheduling backend:
 
 ```ts
 // app/api/late/[...path]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
-export async function POST(req: NextRequest, { params }: { params: { path: string[] } }) {
+export async function POST(
+  req: NextRequest,
+  { params }: { params: { path: string[] } }
+) {
   const apiKey = process.env.LATE_API_KEY
   const path = params.path.join('/')
 
@@ -187,27 +232,24 @@ export async function POST(req: NextRequest, { params }: { params: { path: strin
 }
 ```
 
-### 5. Environment Variables
+</details>
+
+### Environment Variables
 
 ```env
-# Required for social media posting (Late API)
 LATE_API_KEY=sk_your_api_key_here
-
-# Required for Sanity client
 NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
 NEXT_PUBLIC_SANITY_DATASET=production
 ```
 
 ---
 
-## Configuration
+## ⚙️ Configuration
 
 ### Graphics Styles
 
-The plugin ships with 5 built-in styles:
-
 | Style | Description |
-|-------|-------------|
+|:------|:------------|
 | **Industrial** | Bold, dark, high-contrast with industrial textures |
 | **Minimal** | Clean, minimalist with subtle typography |
 | **Gradient** | Vibrant gradient backgrounds with modern feel |
@@ -217,7 +259,7 @@ The plugin ships with 5 built-in styles:
 ### Supported Platforms
 
 | Platform | Post Types | Max Characters |
-|----------|-----------|---------------|
+|:---------|:-----------|:--------------:|
 | Instagram | Feed, Story, Reel, Carousel | 2,200 |
 | Facebook | Post | 63,206 |
 | Threads | Post | 500 |
@@ -225,35 +267,38 @@ The plugin ships with 5 built-in styles:
 
 ### Template Placeholders
 
-Use these placeholders in your templates:
-
-- `{title}` - Content title
-- `{date}` - Event date
-- `{location}` - Event location/city
-- `{band}` - Band/artist name
-- `{url}` - Link URL
-- `{time}` - Event time
-- `{venue}` - Venue name
-- `{price}` - Ticket price
+| Placeholder | Description |
+|:------------|:------------|
+| `{title}` | Content title |
+| `{date}` | Event date |
+| `{time}` | Event time |
+| `{location}` | Event location / city |
+| `{venue}` | Venue name |
+| `{band}` | Band / artist name |
+| `{url}` | Link URL |
+| `{price}` | Ticket price |
 
 ---
 
-## Architecture
+## 🏗️ Architecture
+
+<details>
+<summary>View project structure</summary>
 
 ```
 src/
-├── index.ts                    # Plugin entry point (definePlugin)
+├── index.ts                         # Plugin entry (definePlugin)
 ├── lib/
-│   ├── types.ts               # Core types (formats, styles, options)
-│   ├── styles.ts              # 5 built-in graphic styles
-│   ├── renderer.ts            # Server-side canvas renderer (@napi-rs/canvas)
-│   └── index.ts               # Lib barrel export
+│   ├── types.ts                     # Core types
+│   ├── styles.ts                    # 5 built-in graphic styles
+│   ├── renderer.ts                  # Server-side canvas renderer
+│   └── index.ts
 ├── tools/
 │   ├── SocialMediaStudioToolV2.tsx  # Main plugin UI (6 tabs)
-│   ├── SocialMediaStudioTool.tsx    # Graphics Studio tab component
-│   └── ConcertDayGenerator.tsx      # Concert day graphics generator
+│   ├── SocialMediaStudioTool.tsx    # Graphics Studio tab
+│   └── ConcertDayGenerator.tsx      # Concert day generator
 ├── components/
-│   ├── studio/                # Graphics Studio UI components
+│   ├── studio/                      # Graphics Studio UI
 │   │   ├── ContentSelectionPanel.tsx
 │   │   ├── FormatStylePanel.tsx
 │   │   ├── TextContentPanel.tsx
@@ -264,15 +309,15 @@ src/
 │   │   ├── StyleThumbnail.tsx
 │   │   ├── Slider.tsx
 │   │   └── constants.ts
-│   └── social-media/          # Social media posting components
+│   └── social-media/               # Social posting UI
 │       ├── types.ts
 │       ├── InstagramFormatSelector.tsx
 │       ├── DeviceMockup.tsx
 │       ├── SettingsTab.tsx
 │       └── DraftsTemplatesTab.tsx
 ├── schemas/
-│   ├── socialMediaTemplate.ts # Template document schema
-│   ├── lateApiSettings.ts     # API settings singleton schema
+│   ├── socialMediaTemplate.ts
+│   ├── lateApiSettings.ts
 │   └── index.ts
 └── actions/
     ├── generateSocialGraphicsAction.ts
@@ -281,58 +326,56 @@ src/
     └── index.ts
 ```
 
----
-
-## Requirements
-
-- **Sanity Studio** v3 or later
-- **React** 18 or 19
-- **@sanity/ui** v2+
-- **@sanity/icons** v3+
-- **@napi-rs/canvas** (optional, for server-side graphics rendering)
-- **[Late](https://getlate.dev)** account (optional, for social media posting/scheduling)
+</details>
 
 ---
 
-## Development
+## 📋 Requirements
+
+| Dependency | Version |
+|:-----------|:--------|
+| Sanity Studio | v3+ |
+| React | 18 or 19 |
+| @sanity/ui | v2+ |
+| @sanity/icons | v3+ |
+| Node.js | 18+ |
+| @napi-rs/canvas | *(optional)* — server-side rendering |
+| [Late](https://getlate.dev) | *(optional)* — social media scheduling |
+
+---
+
+## 🛠️ Development
 
 ```bash
-# Clone the repo
 git clone https://github.com/netz-sg/sanity-social-media-studio.git
 cd sanity-social-media-studio
-
-# Install dependencies
 npm install
-
-# Build
-npm run build
-
-# Watch mode
-npm run dev
+npm run build       # Production build
+npm run dev         # Watch mode
 ```
 
 ---
 
-## Contributing
+## 🤝 Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request.
+Contributions are welcome! Please [open an issue](https://github.com/netz-sg/sanity-social-media-studio/issues) or submit a pull request.
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create your feature branch — `git checkout -b feature/amazing-feature`
+3. Commit your changes — `git commit -m 'Add amazing feature'`
+4. Push to the branch — `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
 ---
 
-## License
+<div align="center">
 
-[MIT](LICENSE) © netz-sg
+## 📄 License
+
+[MIT](LICENSE) © [netz-sg](https://github.com/netz-sg)
 
 ---
 
-## Credits
+Built with [Sanity](https://www.sanity.io/) · Scheduling by [Late](https://getlate.dev) · Rendering by [@napi-rs/canvas](https://github.com/nicolo-ribaudo/canvas)
 
-- Built with [Sanity](https://www.sanity.io/)
-- Social media scheduling powered by [Late](https://getlate.dev)
-- Server-side rendering with [@napi-rs/canvas](https://github.com/nicolo-ribaudo/canvas)
+</div>
