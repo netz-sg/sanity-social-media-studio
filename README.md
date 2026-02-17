@@ -11,13 +11,17 @@ A comprehensive social media management plugin for [Sanity Studio](https://www.s
 
 ## Screenshots
 
-| Social Media Graphics | Post Creation |
-|:---:|:---:|
-| ![Social Media Graphics](Socialmedia-Graphics.png) | ![Post Creation](post_creation.png) |
+### 🎨 Social Media Graphics
+![Social Media Graphics](Socialmedia-Graphics.png)
 
-| Post Calendar | Drafts & Templates |
-|:---:|:---:|
-| ![Post Calendar](post_calender.png) | ![Drafts & Templates](drafts_templates.png) |
+### ✏️ Post Creation
+![Post Creation](post_creation.png)
+
+### 📅 Post Calendar
+![Post Calendar](post_calender.png)
+
+### 📝 Drafts & Templates
+![Drafts & Templates](drafts_templates.png)
 
 ---
 
