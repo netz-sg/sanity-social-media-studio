@@ -205,23 +205,35 @@ export async function POST(req: NextRequest) {
 <details>
 <summary><strong>Late API Proxy (Social Media Scheduling)</strong></summary>
 
-The posting feature uses [Late](https://getlate.dev) as the scheduling backend:
+The posting feature uses [Late](https://getlate.dev) as the scheduling backend. The API key is configured directly within the plugin's **Settings tab** and stored as a Sanity document — no environment variable needed.
+
+You need to set up a proxy route that reads the key from Sanity and forwards requests to the Late API:
 
 ```ts
 // app/api/late/[...path]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@sanity/client'
+
+const sanityClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+  useCdn: false,
+  apiVersion: '2024-01-01',
+})
 
 export async function POST(
   req: NextRequest,
   { params }: { params: { path: string[] } }
 ) {
-  const apiKey = process.env.LATE_API_KEY
+  const settings = await sanityClient.fetch(
+    `*[_type == "lateApiSettings"][0]{ apiKey }`
+  )
   const path = params.path.join('/')
 
   const response = await fetch(`https://api.getlate.dev/${path}`, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${apiKey}`,
+      'Authorization': `Bearer ${settings.apiKey}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(await req.json()),
@@ -237,10 +249,11 @@ export async function POST(
 ### Environment Variables
 
 ```env
-LATE_API_KEY=sk_your_api_key_here
 NEXT_PUBLIC_SANITY_PROJECT_ID=your_project_id
 NEXT_PUBLIC_SANITY_DATASET=production
 ```
+
+> **Note:** The Late API key is managed within the plugin's **Settings tab** in Sanity Studio — not via environment variables.
 
 ---
 
