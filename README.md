@@ -1,4 +1,4 @@
-[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=flat&logo=buy-me-a-coffee)](https://buymeacoffee.com/sgnetz)
+<a href="https://buymeacoffee.com/sgnetz"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="217" alt="Buy Me A Coffee"></a>
 
 <div align="center">
 
