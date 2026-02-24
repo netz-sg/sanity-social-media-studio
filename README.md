@@ -1,4 +1,4 @@
-<a href="https://buymeacoffee.com/sgnetz"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="217" alt="Buy Me A Coffee"></a>
+<p align="right"><a href="https://buymeacoffee.com/sgnetz"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="217" alt="Buy Me A Coffee"></a></p>
 
 <div align="center">
 
